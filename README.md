@@ -104,9 +104,9 @@ curl "http://127.0.0.1:8000/forecast/Delhi?as_of=2019-11-01"
 ```json
 {"city": "Delhi", "as_of": "2019-11-01", "observed_pm25": 388.4,
  "forecasts": [
-   {"horizon": 1, "date": "2019-11-02", "pm25": 327.9, "lo": 103.6, "hi": 453.9, "category": "Severe"},
-   {"horizon": 2, "date": "2019-11-03", "pm25": 271.4, "lo": 83.5, "hi": 397.1, "category": "Severe"},
-   {"horizon": 3, "date": "2019-11-04", "pm25": 239.2, "lo": 86.8, "hi": 431.4, "category": "Very Poor"}]}
+   {"horizon": 1, "date": "2019-11-02", "pm25": 327.3, "lo": 103.6, "hi": 459.8, "category": "Severe"},
+   {"horizon": 2, "date": "2019-11-03", "pm25": 268.9, "lo": 83.5, "hi": 408.0, "category": "Severe"},
+   {"horizon": 3, "date": "2019-11-04", "pm25": 239.0, "lo": 86.8, "hi": 422.3, "category": "Very Poor"}]}
 ```
 
 ## Repository map

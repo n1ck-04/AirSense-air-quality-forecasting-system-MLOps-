@@ -147,6 +147,6 @@ Try it: run `make train` twice, then `make mlflow-ui`. You'll see two runs, two 
 
 Delhi, as of 1 November 2019, a peak smog day: 388 µg/m³ measured.
 1. History is cut at 2019-11-01. For horizon 1, `pm25_lag0 = 388.4`, the 3-day mean is high, and the target date's season is early November.
-2. The point model predicts log(PM2.5); `expm1` turns that into **328**. The quantile models plus the conformal margin give **104–454**.
-3. 328 > 250 → **"Severe"**. Horizons 2 and 3: 271 (Severe) and 239 (Very Poor). The model expects the episode to ease, as smog episodes usually do.
+2. The point model predicts log(PM2.5); `expm1` turns that into **327**. The quantile models plus the conformal margin give **104–460**.
+3. 327 > 250 → **"Severe"**. Horizons 2 and 3: 269 (Severe) and 239 (Very Poor). The model expects the episode to ease, as smog episodes usually do.
 4. The API returns all three with the "PM2.5 sub-index only" note.
