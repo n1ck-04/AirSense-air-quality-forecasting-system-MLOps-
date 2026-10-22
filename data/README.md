@@ -2,6 +2,8 @@
 
 The raw data is **not stored in this repository**. Download it into `data/raw/`.
 
+The one exception is `reports/test_forecasts.parquet`: it holds each test-year forecast next to the PM2.5 that was then measured, so the dashboard can show forecasts against reality without the raw data.
+
 ## Air quality (required)
 
 **Air Quality Data in India (2015–2020)** on Kaggle, compiled by Vopani from the Central Pollution Control Board (CPCB) of India: https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india

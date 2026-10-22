@@ -4,14 +4,19 @@ Every assumption a reviewer might question lives here, so changing one is a
 one-line edit.
 """
 
+import os
 from pathlib import Path
 
 import pandas as pd
 
 # ---------------------------------------------------------------------------
-# Paths
+# Paths. ROOT is the project folder holding data/, models/ and reports/.
+#   - Set AIRSENSE_HOME to choose it explicitly (the Docker image does).
+#   - Otherwise, when running from a clone (pip install -e .), it's the repo root.
+#   - Otherwise (a normal install), it's the folder you run the command from.
 # ---------------------------------------------------------------------------
-ROOT = Path(__file__).resolve().parents[2]
+_REPO = Path(__file__).resolve().parents[2]
+ROOT = Path(os.environ.get("AIRSENSE_HOME") or (_REPO if (_REPO / "pyproject.toml").exists() else Path.cwd()))
 RAW_PATH = ROOT / "data" / "raw" / "city_day.csv"       # from Kaggle, see data/README.md
 WEATHER_PATH = ROOT / "data" / "raw" / "weather.csv"     # optional, see scripts/fetch_weather.py
 CLEAN_PATH = ROOT / "data" / "clean.parquet"
