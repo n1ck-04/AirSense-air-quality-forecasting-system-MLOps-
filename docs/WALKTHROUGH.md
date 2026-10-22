@@ -139,7 +139,7 @@ Try it: run `make train` twice, then `make mlflow-ui`. You'll see two runs, two 
 
 - **`tests/conftest.py`** builds a fake 3-city dataset and trains a small model once.
 - **26 tests:** cleaning, categories, calendar lags, target alignment, no-future features, serving consistency, split, weather join, conformal coverage, model sanity, refit, promotion gate, metrics, PSI, seasonal z, and the API, including error codes.
-- **CI:** lint and tests; then the whole pipeline on fake data; then the Docker build and a real HTTP request to the container.
+- **CI:** lint and tests (on the fake data); then the whole pipeline on the real data; then the Docker build and a real HTTP request to the container.
 
 ---
 

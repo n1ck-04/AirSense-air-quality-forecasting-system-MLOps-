@@ -1,27 +1,20 @@
 # Data
 
-The raw data is **not stored in this repository**. Download it into `data/raw/`.
+## Air quality (included)
 
-The one exception is `reports/test_forecasts.parquet`: it holds each test-year forecast next to the PM2.5 that was then measured, so the dashboard can show forecasts against reality without the raw data.
+`data/raw/city_day.csv` comes from **Air Quality Data in India (2015–2020)** on Kaggle, compiled by Vopani from the Central Pollution Control Board (CPCB) of India: https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india
 
-## Air quality (required)
+It's published under **CC0: Public Domain**, so it's included here and the pipeline runs straight after cloning. Credit to the CPCB for the measurements and to Vopani for compiling them.
 
-**Air Quality Data in India (2015–2020)** on Kaggle, compiled by Vopani from the Central Pollution Control Board (CPCB) of India: https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india
+To refresh it from Kaggle with the Kaggle CLI configured (`~/.kaggle/kaggle.json`):
+```bash
+kaggle datasets download -d rohanrao/air-quality-data-in-india -f city_day.csv -p data/raw --unzip
+```
 
-You only need `city_day.csv`. Either:
-
-- download it from the Kaggle page and save it as `data/raw/city_day.csv`, or
-- with the Kaggle CLI configured (`~/.kaggle/kaggle.json`):
-  ```bash
-  kaggle datasets download -d rohanrao/air-quality-data-in-india -f city_day.csv -p data/raw --unzip
-  ```
-
-Check the licence on the Kaggle page before redistributing the data.
-
-## Weather (optional)
+## Weather (optional, not included)
 
 `python scripts/fetch_weather.py` downloads daily temperature, humidity, wind and rainfall for each city from the [Open-Meteo](https://open-meteo.com/) historical archive (ERA5 reanalysis, CC BY 4.0) into `data/raw/weather.csv`. If that file exists, training adds weather features automatically. Weather data by Open-Meteo.com.
 
-## No data at hand?
+## Fake data
 
-`python -m airsense.synthetic data/raw/city_day.csv` writes a small **fake** dataset with the same columns. The tests and CI use it. Its numbers mean nothing.
+`python -m airsense.synthetic <path>` writes a small **fake** dataset with the same columns. The unit tests use it, so they run in seconds; its numbers mean nothing.

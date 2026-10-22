@@ -1,6 +1,7 @@
-# Raw data: download it, see data/README.md
+# Raw data: city_day.csv is included (CC0); anything else you download stays local
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/city_day.csv
 data/*.parquet
 
 # Rebuilt by `make all`
@@ -18,3 +19,4 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .venv/
+build/

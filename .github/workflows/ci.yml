@@ -1,6 +1,6 @@
 # Runs on every push and pull request.
 #   test:      lint + unit tests
-#   pipeline:  the whole pipeline end to end on FAKE data (the real data isn't in the repo):
+#   pipeline:  the whole pipeline end to end on the REAL data in data/raw/:
 #              clean -> train (MLflow + promotion gate) -> monitor -> Docker image -> call the API
 name: CI
 
@@ -35,8 +35,6 @@ jobs:
           cache: pip
       - name: Install
         run: pip install -e .
-      - name: Fake data
-        run: python -m airsense.synthetic data/raw/city_day.csv
       - name: Clean, train, monitor
         run: |
           python -m airsense.data
@@ -48,7 +46,7 @@ jobs:
         run: |
           docker run -d --name airsense -p 8000:8000 airsense
           for i in $(seq 1 60); do curl -sf http://127.0.0.1:8000/health && break; sleep 2; done
-          curl -sf "http://127.0.0.1:8000/forecast/City0?as_of=2020-01-15" | tee out.json
+          curl -sf "http://127.0.0.1:8000/forecast/Delhi?as_of=2019-11-01" | tee out.json
           python -c "import json; d=json.load(open('out.json')); assert len(d['forecasts']) == 3, d"
       - name: Container logs on failure
         if: failure()

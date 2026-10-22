@@ -35,8 +35,8 @@ mlflow-ui:        ## browse experiment runs and the model registry at http://127
 docker:           ## build and run the API in a container
 	docker build -t airsense . && docker run --rm -p 8000:8000 airsense
 
-synthetic:        ## write FAKE data to data/raw/city_day.csv (for trying the pipeline without Kaggle)
-	python -m airsense.synthetic data/raw/city_day.csv
+synthetic:        ## write FAKE data to /tmp/fake_city_day.csv (what the tests use)
+	python -m airsense.synthetic /tmp/fake_city_day.csv
 
 weather:          ## download weather from Open-Meteo (needs internet)
 	python scripts/fetch_weather.py

@@ -4,7 +4,7 @@
 
 Each morning, AirSense forecasts fine-particle pollution (PM2.5) for the next three days, with an 80% range and the CPCB air-quality category. Forecasts are served by a FastAPI service and explored in a Streamlit dashboard. Every training run is logged in MLflow, and a new model only replaces the live one if it's at least as good on validation data. A monitoring replay shows how the system behaves through a monsoon, a winter smog season and the 2020 lockdown, and which retraining policy is worth its cost.
 
-> **Data.** CPCB city-day measurements, 2015–2020, via [Kaggle](https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india). The model is evaluated on the final year (1 Jul 2019 – 1 Jul 2020), which it never saw during training. The raw data isn't stored in this repo; see [data/README.md](data/README.md).
+> **Data.** CPCB city-day measurements, 2015–2020, via [Kaggle](https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india) (CC0, included in `data/raw/`). The model is evaluated on the final year (1 Jul 2019 – 1 Jul 2020), which it never saw during training. See [data/README.md](data/README.md).
 
 ---
 
@@ -86,7 +86,6 @@ git clone https://github.com/n1ck-04/AirSense-air-quality-forecasting-system-MLO
 cd AirSense-air-quality-forecasting-system-MLOps-
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -e ".[dashboard,dev]"
-# put city_day.csv in data/raw/  (see data/README.md)
 make all          # clean -> train -> monitor, about 2 minutes
 make test         # 26 tests, uses fake data
 make api          # http://127.0.0.1:8000/docs
@@ -94,7 +93,7 @@ make dashboard    # http://localhost:8501
 make mlflow-ui    # http://127.0.0.1:5000: runs and the model registry
 ```
 
-No Make on Windows? Each target is one line in the `Makefile`; run that command directly. No data yet? `make synthetic` writes a fake dataset so you can try the pipeline.
+No Make on Windows? Each target is one line in the `Makefile`; run that command directly.
 
 Example request:
 
@@ -131,7 +130,7 @@ reports/         metrics, forecasts, monitoring results, charts
 docs/            design decisions, code walkthrough, exercises
 ```
 
-CI (GitHub Actions) runs lint and tests, then the whole pipeline on fake data (clean, train with MLflow, monitor), builds the Docker image and requests a forecast from it.
+CI (GitHub Actions) runs lint and tests (on fake data, in seconds), then the whole pipeline on the real data (clean, train with MLflow, monitor), builds the Docker image and requests a forecast from it.
 
 ## Limitations
 

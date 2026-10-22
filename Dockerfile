@@ -1,6 +1,5 @@
 # The API in a container. Data is cleaned and the model trained at build time,
-# so the image is self-contained. Put city_day.csv in data/raw/ first
-# (or the fake one: python -m airsense.synthetic data/raw/city_day.csv).
+# so the image is self-contained. Uses data/raw/city_day.csv from the repo.
 FROM python:3.12-slim
 
 # LightGBM needs the OpenMP runtime.

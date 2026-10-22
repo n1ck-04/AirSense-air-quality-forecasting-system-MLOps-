@@ -90,12 +90,16 @@ Each entry: what was decided, what else was considered, and why. If you change o
 
 **Honest note:** retraining at all improved MAE by only 0.4% here. The replay's main value is showing *how to decide* whether retraining is worth it, with evidence.
 
-### 12. Fake data for tests and CI; real data stays out of the repo
+### 12. Real data in the repo; fake data for the unit tests
 
-**Why:**
-- *Licensing:* the Kaggle dataset's licence should be checked before redistribution.
-- *Speed:* the tests and CI use a small synthetic dataset with the same columns, a winter peak, persistence and gaps. That's enough to exercise every code path, including training with MLflow, monitoring and building the Docker image, on GitHub's servers.
-- *Limit:* synthetic data can't show that the model is *good*, only that the code works. The real results are in `reports/`, produced from the real data.
+**Decision:**
+- The CPCB data (2.5 MB, CC0 public domain) is committed, so anyone can clone and run the pipeline, and CI reproduces the real results on every push.
+- The unit tests use a small synthetic dataset with the same columns, a winter peak, persistence and gaps.
+
+**Why fake data for the tests:**
+- *Speed:* the 26 tests run in about 10 seconds.
+- *Control:* a test can check an exact expected value.
+- *Limit:* synthetic data can only show that the code *works*, not that the model is *good*. The model's quality is shown by the real-data pipeline, whose results are in `reports/`.
 
 ### 13. A dashboard that runs from `reports/` alone
 
