@@ -1,0 +1,20 @@
+# Raw data: download it, see data/README.md
+data/raw/*
+!data/raw/.gitkeep
+data/*.parquet
+
+# Rebuilt by `make all`
+models/*.joblib
+mlflow.db
+mlruns/
+mlartifacts/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
