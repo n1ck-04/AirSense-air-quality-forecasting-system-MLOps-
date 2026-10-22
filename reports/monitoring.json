@@ -1,0 +1,86 @@
+{
+  "horizon_days": 1,
+  "policies": {
+    "static": {
+      "year": {
+        "mae": 11.2,
+        "skill": 0.057
+      },
+      "before_lockdown": {
+        "mae": 12.62,
+        "skill": 0.05
+      },
+      "lockdown": {
+        "mae": 7.29,
+        "skill": 0.087
+      },
+      "retrains": 0,
+      "retrain_dates": []
+    },
+    "monthly": {
+      "year": {
+        "mae": 11.15,
+        "skill": 0.062
+      },
+      "before_lockdown": {
+        "mae": 12.58,
+        "skill": 0.053
+      },
+      "lockdown": {
+        "mae": 7.19,
+        "skill": 0.099
+      },
+      "retrains": 11,
+      "retrain_dates": [
+        "2019-08-05",
+        "2019-09-02",
+        "2019-10-07",
+        "2019-11-04",
+        "2019-12-02",
+        "2020-01-06",
+        "2020-02-03",
+        "2020-03-02",
+        "2020-04-06",
+        "2020-05-04",
+        "2020-06-01"
+      ]
+    },
+    "triggered": {
+      "year": {
+        "mae": 11.16,
+        "skill": 0.061
+      },
+      "before_lockdown": {
+        "mae": 12.6,
+        "skill": 0.052
+      },
+      "lockdown": {
+        "mae": 7.17,
+        "skill": 0.102
+      },
+      "retrains": 8,
+      "retrain_dates": [
+        "2019-09-09",
+        "2019-10-07",
+        "2019-12-09",
+        "2020-01-13",
+        "2020-03-16",
+        "2020-04-13",
+        "2020-05-11",
+        "2020-06-08"
+      ]
+    }
+  },
+  "monitoring": {
+    "weeks": 53,
+    "naive_psi_alarm_weeks": 51,
+    "naive_psi_alarm_weeks_before_lockdown": 37,
+    "seasonal_alarm_weeks": 18,
+    "seasonal_alarm_weeks_before_lockdown": 7,
+    "seasonal_shift_mean_before_lockdown": -0.68,
+    "seasonal_shift_mean_lockdown": -1.26,
+    "first_seasonal_alarm_after_lockdown": "2020-03-30",
+    "min_skill_28d": -0.026,
+    "skill_alarm_weeks": 1
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "h1": {
+    "rows": {
+      "train": 13102,
+      "valid": 2953,
+      "test": 5988
+    },
+    "model": {
+      "mae": 11.19,
+      "rmse": 19.75,
+      "bias": -0.05,
+      "category_accuracy": 0.713,
+      "poor_alert_precision": 0.824,
+      "poor_alert_recall": 0.764,
+      "interval_coverage": 0.783,
+      "interval_width": 36.4,
+      "interval_coverage_uncalibrated": 0.744
+    },
+    "persistence": {
+      "mae": 11.88,
+      "rmse": 21.32,
+      "bias": 0.1,
+      "category_accuracy": 0.694,
+      "poor_alert_precision": 0.786,
+      "poor_alert_recall": 0.791
+    },
+    "mean7": {
+      "mae": 15.11,
+      "rmse": 26.56,
+      "bias": 0.16,
+      "category_accuracy": 0.635,
+      "poor_alert_precision": 0.773,
+      "poor_alert_recall": 0.724
+    },
+    "last_year": {
+      "mae": 24.06,
+      "rmse": 35.14,
+      "bias": 13.51,
+      "category_accuracy": 0.468,
+      "poor_alert_precision": 0.476,
+      "poor_alert_recall": 0.735
+    },
+    "skill_vs_persistence": 0.058,
+    "best_baseline": "persistence",
+    "skill_vs_best_baseline": 0.058,
+    "before_lockdown": {
+      "rows": 4364,
+      "model_mae": 12.6,
+      "persistence_mae": 13.29,
+      "skill": 0.052,
+      "mean_pm25": 58.1
+    },
+    "lockdown": {
+      "rows": 1583,
+      "model_mae": 7.32,
+      "persistence_mae": 7.98,
+      "skill": 0.083,
+      "mean_pm25": 32.1
+    },
+    "trees": {
+      "point": 183,
+      "lo": 113,
+      "hi": 310
+    },
+    "conformal_margin": 0.77,
+    "valid_mae": 13.52
+  },
+  "h2": {
+    "rows": {
+      "train": 13098,
+      "valid": 2953,
+      "test": 5988
+    },
+    "model": {
+      "mae": 14.61,
+      "rmse": 24.73,
+      "bias": 0.79,
+      "category_accuracy": 0.642,
+      "poor_alert_precision": 0.801,
+      "poor_alert_recall": 0.686,
+      "interval_coverage": 0.782,
+      "interval_width": 45.4,
+      "interval_coverage_uncalibrated": 0.753
+    },
+    "persistence": {
+      "mae": 16.21,
+      "rmse": 28.59,
+      "bias": 0.17,
+      "category_accuracy": 0.618,
+      "poor_alert_precision": 0.701,
+      "poor_alert_recall": 0.706
+    },
+    "mean7": {
+      "mae": 16.54,
+      "rmse": 29.09,
+      "bias": 0.21,
+      "category_accuracy": 0.609,
+      "poor_alert_precision": 0.747,
+      "poor_alert_recall": 0.701
+    },
+    "last_year": {
+      "mae": 24.08,
+      "rmse": 35.15,
+      "bias": 13.54,
+      "category_accuracy": 0.468,
+      "poor_alert_precision": 0.476,
+      "poor_alert_recall": 0.734
+    },
+    "skill_vs_persistence": 0.099,
+    "best_baseline": "persistence",
+    "skill_vs_best_baseline": 0.099,
+    "before_lockdown": {
+      "rows": 4348,
+      "model_mae": 16.58,
+      "persistence_mae": 18.45,
+      "skill": 0.101,
+      "mean_pm25": 58.1
+    },
+    "lockdown": {
+      "rows": 1575,
+      "model_mae": 9.15,
+      "persistence_mae": 10.02,
+      "skill": 0.086,
+      "mean_pm25": 32.0
+    },
+    "trees": {
+      "point": 135,
+      "lo": 93,
+      "hi": 197
+    },
+    "conformal_margin": 0.79,
+    "valid_mae": 16.77
+  },
+  "h3": {
+    "rows": {
+      "train": 13094,
+      "valid": 2953,
+      "test": 5988
+    },
+    "model": {
+      "mae": 15.94,
+      "rmse": 26.94,
+      "bias": 1.1,
+      "category_accuracy": 0.614,
+      "poor_alert_precision": 0.804,
+      "poor_alert_recall": 0.681,
+      "interval_coverage": 0.763,
+      "interval_width": 47.6,
+      "interval_coverage_uncalibrated": 0.725
+    },
+    "persistence": {
+      "mae": 18.39,
+      "rmse": 32.61,
+      "bias": 0.19,
+      "category_accuracy": 0.586,
+      "poor_alert_precision": 0.67,
+      "poor_alert_recall": 0.676
+    },
+    "mean7": {
+      "mae": 17.45,
+      "rmse": 30.59,
+      "bias": 0.28,
+      "category_accuracy": 0.591,
+      "poor_alert_precision": 0.731,
+      "poor_alert_recall": 0.689
+    },
+    "last_year": {
+      "mae": 24.12,
+      "rmse": 35.19,
+      "bias": 13.56,
+      "category_accuracy": 0.467,
+      "poor_alert_precision": 0.475,
+      "poor_alert_recall": 0.734
+    },
+    "skill_vs_persistence": 0.133,
+    "best_baseline": "mean7",
+    "skill_vs_best_baseline": 0.087,
+    "before_lockdown": {
+      "rows": 4337,
+      "model_mae": 18.13,
+      "persistence_mae": 21.21,
+      "skill": 0.145,
+      "mean_pm25": 58.1
+    },
+    "lockdown": {
+      "rows": 1570,
+      "model_mae": 9.91,
+      "persistence_mae": 10.59,
+      "skill": 0.065,
+      "mean_pm25": 32.0
+    },
+    "trees": {
+      "point": 102,
+      "lo": 106,
+      "hi": 233
+    },
+    "conformal_margin": 1.13,
+    "valid_mae": 17.75
+  },
+  "per_city_h1": [
+    {
+      "city": "Brajrajnagar",
+      "days": 311,
+      "mean_pm25": 51.738,
+      "model_mae": 11.979,
+      "persistence_mae": 14.118,
+      "skill": 0.152
+    },
+    {
+      "city": "Jaipur",
+      "days": 367,
+      "mean_pm25": 43.46,
+      "model_mae": 7.85,
+      "persistence_mae": 8.73,
+      "skill": 0.101
+    },
+    {
+      "city": "Amritsar",
+      "days": 356,
+      "mean_pm25": 46.105,
+      "model_mae": 12.365,
+      "persistence_mae": 13.681,
+      "skill": 0.096
+    },
+    {
+      "city": "Chennai",
+      "days": 367,
+      "mean_pm25": 34.137,
+      "model_mae": 8.667,
+      "persistence_mae": 9.575,
+      "skill": 0.095
+    },
+    {
+      "city": "Thiruvananthapuram",
+      "days": 364,
+      "mean_pm25": 22.226,
+      "model_mae": 4.736,
+      "persistence_mae": 5.215,
+      "skill": 0.092
+    },
+    {
+      "city": "Lucknow",
+      "days": 367,
+      "mean_pm25": 82.64,
+      "model_mae": 16.151,
+      "persistence_mae": 17.684,
+      "skill": 0.087
+    },
+    {
+      "city": "Ahmedabad",
+      "days": 363,
+      "mean_pm25": 49.662,
+      "model_mae": 10.703,
+      "persistence_mae": 11.584,
+      "skill": 0.076
+    },
+    {
+      "city": "Patna",
+      "days": 365,
+      "mean_pm25": 81.289,
+      "model_mae": 15.33,
+      "persistence_mae": 16.51,
+      "skill": 0.071
+    },
+    {
+      "city": "Visakhapatnam",
+      "days": 356,
+      "mean_pm25": 36.771,
+      "model_mae": 9.321,
+      "persistence_mae": 9.97,
+      "skill": 0.065
+    },
+    {
+      "city": "Bengaluru",
+      "days": 367,
+      "mean_pm25": 28.868,
+      "model_mae": 5.543,
+      "persistence_mae": 5.908,
+      "skill": 0.062
+    },
+    {
+      "city": "Delhi",
+      "days": 367,
+      "mean_pm25": 94.731,
+      "model_mae": 23.123,
+      "persistence_mae": 23.935,
+      "skill": 0.034
+    },
+    {
+      "city": "Gurugram",
+      "days": 367,
+      "mean_pm25": 80.354,
+      "model_mae": 20.268,
+      "persistence_mae": 20.688,
+      "skill": 0.02
+    },
+    {
+      "city": "Mumbai",
+      "days": 367,
+      "mean_pm25": 36.304,
+      "model_mae": 6.954,
+      "persistence_mae": 7.042,
+      "skill": 0.012
+    },
+    {
+      "city": "Jorapokhar",
+      "days": 271,
+      "mean_pm25": 57.584,
+      "model_mae": 11.098,
+      "persistence_mae": 11.169,
+      "skill": 0.006
+    },
+    {
+      "city": "Hyderabad",
+      "days": 367,
+      "mean_pm25": 36.372,
+      "model_mae": 5.487,
+      "persistence_mae": 5.476,
+      "skill": -0.002
+    },
+    {
+      "city": "Talcher",
+      "days": 313,
+      "mean_pm25": 56.847,
+      "model_mae": 14.065,
+      "persistence_mae": 14.004,
+      "skill": -0.004
+    },
+    {
+      "city": "Amaravati",
+      "days": 312,
+      "mean_pm25": 29.905,
+      "model_mae": 6.386,
+      "persistence_mae": 6.277,
+      "skill": -0.017
+    }
+  ]
+}
